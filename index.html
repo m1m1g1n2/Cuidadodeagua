@@ -1,0 +1,315 @@
+<!doctype html>
+<head>
+<meta charset="utf-">
+<title>Cuidado del agua</title>
+<style>
+{*margin:0;padding: 0v;}
+html{background-color:teal;}
+body{width:1000px;height: 800px;margin: auto;
+background-color:lightskyblue}
+header {width: 1000px;height: 200px;background-color:mediumaquamarine}
+nav {width: 1000px;height:50px;background-color:lightskyblue}
+main {width: 1000px;height:100%;background-color:cornflowerblue}
+footer {width: 1000px;height:50px;background-color:lightsteelblue}
+section#logo{width:200px;height:200px;float:left;
+background-color:cadetblue}
+section#banner{width:800px;height:200px;float:left;
+background-color:lightblue}
+article {width: 1000px;height:100%;float:left;
+background-color: steelblue; overflow-y: scroll;}
+template{height: 100%;}
+.menu-prin{
+    display: flex;
+    flex-flow: row;
+    padding-inline-start: 0px!important;
+}
+.menu-item{
+    display: flex;
+    flex-flow: column;
+}
+.button-style{
+	background: lightskyblue;
+    border: none;
+}
+</style>
+<style>
+	.slider {
+	margin: auto;
+	overflow: hidden;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	animation: animaciones 20s infinite alternate;
+}
+
+.slider li {
+	list-style: none;
+	width: 100%;
+}
+
+.slider img {
+	width: 100%;
+}
+
+#books{
+	height: 100%;
+}
+
+@keyframes animaciones {
+	0%{margin-left:0;}
+	20%{margin-left:0}
+
+	40%{margin-left:-100%;}
+	30%{margin-left:-100%;}
+
+	20%{margin-left:-100%;}
+	30%{margin-left:-100%;}
+
+	25%{margin-left:-200%;}
+	40%{margin-left:-200%;}
+
+	30%{margin-left:-100%;}
+	25%{margin-left:-100%;}
+
+	30%{margin-left:-200%;}
+	40%{margin-left:-200%;}
+
+	20%{margin-left:-100%;}
+	40%{margin-left:-100%;}
+
+	45%{margin-left:-200%;}
+	20%{margin-left:-200%;}
+
+	30%{margin-left:-100%;}
+	50%{margin-left:-100%;}
+}
+</style>
+</head>
+<body>
+<header>
+<section id="logo"><img src="imagenes\logo.png" width="200" height="200"></section>
+<section id="baneer"><div class="slider">
+<ul>
+        <li><img src="imagenes\imagen1.jpg" width=100% height=180px></img></li>
+		<li><img src="imagenes\imagen2.jpg" width=100% height=180px></img></li>
+		<li><img src="imagenes\imagen3.jpg" widt8=100% height=180px></img></li>
+		<li><img src="imagenes\imagen4.jpg" width=100% height=180px></img></li>
+		<li><img src="imagenes\imagen5.jpg" width=100% height=180px></img></li>
+		<li><img src="imagenes\imagen6.jpg" width=100% height=180px></img></li>
+		<li><img src="imagenes\imagen7.jpg" width=100% height=180px></img></li>
+		<li><img src="imagenes\imagen8.jpg" width=100% height=180px></img></li>
+		<li><img src="imagenes\imagen9.jpg" width=100% height=180px></img></li>
+	</ul>
+</section>
+</header>
+<div id="header">
+	<div id="templates">
+		<ul class="menu-prin">
+		<li class="menu-item"><input class="button-style" type="button" value="Lo que significa agua"><ul><li><input class="button-style" type="button" value="Vamos a reflexionar"></li></ul></li>
+		<li class="menu-item"><input class="button-style" type="button" value="Ciclo del agua"><ul><li><input class="button-style" type="button" value="Importancia del ciclo del agua"></li></ul></li>
+		<li class="menu-item"><input class="button-style" type="button" value="Tipos de agua"><ul><li><input class="button-style" type="button" value="Hablemos de agua"></li></ul></li>
+		<li class="menu-item"><input class="button-style" type="button" value="Importancia del agua"><ul><li><input class="button-style" type="button" value="Agua en el cuerpo del ser humano"></li></ul></li>
+		<li class="menu-item"><input class="button-style" type="button" value="Segunda vuelta al agua"><ul><li><input class="button-style" type="button" value="Ya no tenemos agua"></li></ul></li>
+	</div>
+</div>
+</header>
+<main>
+<article>
+
+<template  id="Vamos a reflexionar"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Importancia del ciclo del agua"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Hablemos de agua"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Agua en el cuerpo del ser humano"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Lo que significa agua"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Ciclo del agua"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Tipos de agua"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Importancia del agua"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Segunda vuelta al agua"><li style="height:100%"><span  class="title"></span></li></template>
+<template  id="Ya no tenemos agua"><li style="height:100%"><span  class="title"></span></li></template>
+
+<ul id="books"></ul>
+
+</article>
+</main>
+<footer><p>¿Tienes una duda o una opinion?Contactame:marissa224572@gmail.com o buscame al numero 7122634292</p></footer>
+<script>
+	'use strict';
+
+
+
+function appendBooks(templateId) {
+  const booksList = document.getElementById('books');
+  const fragment = document.getElementById(templateId);
+  
+  // Clear out the content from the ul
+  booksList.innerHTML = '';
+  
+    // Create an instance of the template content
+    const instance = document.importNode(fragment.content, true);
+    // Add relevant content to the template
+	if(templateId ==='Vamos a reflexionar'){
+    instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">¿Que tan importante es el agua para ti?</span></p>  ' +
+'<div align="center"><img src="https://image.freepik.com/vector-gratis/gota-agua-pensando-mucho_193274-1659.jpg" width="350" height="221" /></div> ' +
+'<p>SI has ingresado a esta pagijna significa que te interesa tanto el cuidado del agua como a mi, y eso te lo agradezco porque somos muy pocos los que intentamos frenar la problematica que hay por el malgaste y contaminacion del agua, recurso vital para el ser humano</p> ' +
+'<P>Me gustaria que lo que leas lo pongas en practica dia a dia y lo transmitas con las personas que te rodean.</P> ' +
+'<p>Recuerda que lo que significa agua va mas alla de un concepto cientifico, es tambien significante para nuestra vida y para la de futuras generaciones</p> ' +
+'<div align="center"><img src="https://www.bioenciclopedia.com/wp-content/uploads/2020/01/agua_recurso_natural.jpg." width="250" height="208" />' ;
+}
+else if(templateId ==='Importancia del ciclo del agua'){
+	instance.querySelector('.title').innerHTML =   '<p id="titulo2" align="center"><span class="titulo">IMPORTANCIA DEL CICLO DEL AGUA</span></p> ' +
+  '<P>El ciclo del agua  es importante y necesario para los ecosistemas naturales y la regulación del clima. La alteración del ciclo del agua, como está sucediendo con el cambio climático, supone también modificar la vida de los ecosistemas del planeta.</P>  ' +
+  '<p>El agua está en continuo movimiento a través del cambio que efectúa en sus tres diferentes estados -líquido, sólido y vapor- y se encuentra tanto en la superficie terrestre como debajo de ella. La alteración del ciclo del agua, como está sucediendo con el cambio climático, supone también modificar la vida de los ecosistemas del planeta.</P>  ' +
+	'<div align="center"><img src="https://th.bing.com/th/id/OIP.NCqvzaQ6PlU0kNL6DWW0rAHaE3?pid=ImgDet&rs=1" width="350" height="221" /></div>  ' +
+  '<p>El principal objetivo del ciclo del agua es proveer este vital elemento, que es el agua fresca y pura, a todos los seres vivos.</p>  ' +
+  '<p>En varias partes del ciclo el agua es tomada por animales y plantas para sus procesos metabólicos y luego es devuelta a la atmósfera  mediante la respiración,  la orina, el sudor, la transpiración según sea el caso. Como podemos observar, todas las aguas de la Tierra, en sus distintas maneras, participan en este ciclo, que se renueva constantemente y que tiene una gran importancia para el desarrollo de la vida. Además, el agua arrastra consigo partículas de roca, detritos, polvo y sustancias orgánicas poniéndolas en contacto entre sí y provocando muchas combinaciones químicas y adaptaciones biológicas. En el agua se hallan siempre disueltas, en distinta, proporción variadas sustancias. En el agua de mar, por ejemplo, hay cloruro sódico y elementos como el yodo, el oxígeno, el hidrógeno, e, incluso diminutas partículas de oro. En el agua de manantiales encontramos sales de calcio y manganeso. La presencia de estas últimas constituye una característica del agua que se denomina “dureza”. El agua de algunos manantiales especiales contiene otros compuestos, como hierro, azufre o sustancias radiactivas, que les confieren especiales cualidades terapéuticas o medicinales.</p>  ';
+}
+else if(templateId ==='Hablemos de agua'){
+	instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">HABLEMOS DE AGUA</span></p> ' +
+'<div align="center"><img src="https://i0.wp.com/gaceta.facmed.unam.mx/wp-content/uploads/2018/05/Agua-de-vida.jpg?fit=1200%2C750" width="350" height="221" /></div> ' +
+'<p> Despues de haber leido la informacion acerca de los tipos de agua pudiste notar que no toda el agua existente es para nuestro consumo, muchas ocasiones pensamos que porque hay agua en el arroyo o en el mar todo esta bien pero no es asi;¡NO PORQUE VEAMOS AGUA SIGNIFICA QUE EL RIO NO SUENA! llegamos a tal grado que estamos cada dia mas cerca del "dia cero", estamos cerca de No tener un poco de agua para beber, solo hay un tipo de agua apta para el consumo humano y es es el agua potable, una minima parte. (Te invito a revisar la seccion Importancia del agua y el submenu Ya no tenemos agua) </p> ' +
+'<p> Lamentablemente no todas las personas toman conciencia de que la naturaleza no es de nosotros, todo lo contrario, nosotros le pertenecemos a ella </p> ' +
+'<div align="center"><img src="https://lasillarotarm.blob.core.windows.net/images/2021/03/25/exvjeqvxeaaq7sn.jpg" width="350" height="221" /></div> ' +
+'<p>¿Sabes que es el dia cero? Aqui te lo explico, El Día Cero, se refiere al día exacto en que una región se quedará sin agua. ... En las ciudades, uno de los factores principales de la falta de agua es el estrés hídrico, esto se traduce en un consumo mayor del producto del que realmente se tiene en una región, lo cual a largo plazo provoca escasez.</p> ' +
+'<div align="center"><img src="https://www.gaceta.unam.mx/wp-content/uploads/2018/10/agua-dia-cero1.jpg" width="350" height="221" /></div> ';
+}
+else if(templateId ==='Agua en el cuerpo del ser humano'){
+	instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">AGUA EN EL CUERPO DEL SER HUAMANO</span></p> ' +
+'<div align="center"><img src="https://www.clikisalud.net/wp-content/uploads/2019/12/agua-cuerpo-humano.jpg" width="350" height="221"></div> ' +
+'<p>Como ya sabemos el agua es de gran importancia en los seres vivos ya que es un elemento fundamental para la vida y sin agua no soos capaces de subsistir, ahora es momento de enforcarnos en nosostros como humanos y conocer ¿porque es importante el agua en el cuerpo del ser humano?</p>	 ' +
+'<p>Ela gua tiene multiples funciones en el cuerpo del ser humano tales como;llevar los nutrientes a las células, ayuda a la digestión formando secreciones estomacales, elimina los residuos, mantiene los riñones sanos y aporta una hidratación constante a la piel, ojos, boca y nariz, lubrica las articulaciones, regula la temperatura corporal y el metabolismo.</p> ' +
+'<p>Ahora bien, el agua no solo cubre esas funciones sino tambien nos yuda en nuestro aspecto y la vida que reflejamos porque cuando  consumimos suficiente agua se puede retrasar el envejecimiento y mejorar enfermedades como diabetes, hipoglucemia, artritis, sequedad cutánea y obesidad. Los riñones son los órganos que ayudan al cuerpo a eliminar residuos, y necesitan suficiente agua para hacer su trabajo de “ir al baño”.</p> ' +
+'<div align="center"><img src="https://cdn.hispantv.com/hispanmedia/files/images/thumbnail/20171218/02220796_xl.jpg" width="350" height="221"></div> ' +
+'<p>Por ultimo en es parte es muy importante señalar que el cuerpo está formado en más de un 65 por ciento por agua, imaginate que se acabe el agua potable en el planeta Tierra ¿que vamos a hacer si no tenemos agua para beber?</p> ';
+
+}
+else if(templateId ==='Lo que significa agua'){
+	instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">¿Que es el agua?</span></p>  ' +
+'<div id="texto3">  ' +
+'  <p>El agua es la sustancia líquida, transparente, inodora, incolora e insípida, fundamental para el desarrollo de la vida en la Tierra, cuya composición molecular está constituida por dos átomos de hidrógeno y uno de oxígeno, manifiesta en su fórmula química H2O.</p> ' +
+ ' <p>El agua pura es un líquido insípido (no tiene sabor), incoloro (no tiene color) e inodoro (no tiene olor). El agua que utilizamos normalmente suele tener disueltas otras sustancias, sobre todo sales minerales. Los cambios de estado se producen cuando el agua pasa de un estado a otro al calentarse o enfriarse.</p> ' +
+  '<p>Transporta nutrientes hasta las células para la producción de energía y es el medio en el que se disuelven los líquidos corporales. Facilita la eliminación de toxinas y el exceso de nutrientes por la orina. Una buena hidratación preserva la elasticidad, suavidad y tono de la piel.</p> ' +
+  '<div align="center"><img src="https://consorcioaa.com/wp-content/uploads/2020/03/gota1-2.png" width="350" height="221" /></div> ' +
+  '<p>La mayor parte del agua se encuentra dentro de las células que cumplen funciones vitales en el organismo. El agua tiene la función de transportar nutrientes a las células, ayudar a la digestión de los alimentos o estabilizar nuestra temperatura.</p> ' +
+  '<div align="center"><img src="https://www.viviendasaludable.es/wp-content/uploads/2016/08/ahorrar-agua.jpg" width="350" height="271" /></div> ' +
+'</div>  ';
+}
+else if(templateId ==='Ciclo del agua'){
+	instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">Ciclo del agua</span></p>  ' +
+'<div align="center"><img src="https://dr282zn36sxxg.cloudfront.net/datastreams/f-d%3A59849a63cf02b966ba7ba8eda413bff71212112500e60102ad3d8c66%2BIMAGE_TINY%2BIMAGE_TINY.1" width="350" height="271" /></div>  ' +
+'<p>Se conoce como ciclo del agua o ciclo hidrológico al proceso de circulación del agua entre los distintos compartimentos que forman la hidrosfera. Constituye uno de los circuitos biogeoquímicos más importantes del planeta Tierra, en el cual el agua sufre una serie de desplazamientos y transformaciones físicas, por las cuales va atravesando los tres estados de la materia: líquido, sólido y gaseoso.</p> ' +
+'<p>En el ciclo hidrológico intervienen diversos factores ambientales, como el viento y la energía solar,como todo ciclo, no inicia realmente en ningún punto determinado, sino que se trata de una continuidad de procesos que se repiten sucesivamente. Solo a efectos de poder explicarlo, se le pone un “punto de inicio”.</p> ' +
+'<p>El ciclo del agua comienza con la evaporación del agua desde la superficie. Luego, a medida que se eleva, el vapor de agua contenido en el aire comienza a enfriarse y se condensa en pequeñas gotas de agua, que se reúnen formando las nubes,despues estas se mueven y chocan entre sí, hasta que en algún momento se producen las precipitaciones, producidas por el propio peso del agua.</p> ' +
+'<p>Ahora vamos a explicar cada una de las etapas del ciclo del agua:</p>  ' +
+'<p>Evaporación. El agua líquida de los océanos y otros cuerpos de agua se evapora y pasa de estado líquido a gaseoso, gracias a la acción de la luz solar y al calentamiento diario de la Tierra</p> ' +
+ '<div align="center"><img src="https://www.iagua.es/sites/default/files/styles/thumbnail-700x525/public/grafeno_agua_pixabay.jpg?itok=HybnnrJj" width="350" height="271" /></div>  ' +
+ '<p>Condensación. El agua en la atmósfera se desplaza a enormes distancias, al esparcirse por los vientos en distintas direcciones. Cuando el vapor de agua llega a altitudes mayores, la temperatura más baja le permite condensarse, es decir, recuperar su forma líquida y formar gotas de agua que se acumulan en las nubes cada vez más oscuras a medida que contienen más y más gotas de agua.</p> ' +
+ '<div align="center"><img src="https://www.rehau.com/images/282450/7x5/600/428/6706efdafad782d15d482362a8e05f23/Kn/282450.jpg" width="350" height="271" /></div>  ' +
+'<p>Precipitación. Cuando las gotas de agua contenidas en las nubes son ya lo suficientemente grandes y pesadas, rompen su estado de equilibrio y se producen las lluvias o precipitaciones.</p> ' +
+'<div align="center"><img src="https://definicion.de/wp-content/uploads/2013/06/precipitacion.jpg" width="350" height="271" /></div> ' +
+ '<p>Infiltración. El agua que alcanza el suelo terrestre penetra por ella y se transforma en agua subterránea.</p>  ' +
+ '<div align="center"><img src="https://1.bp.blogspot.com/-S3l97-DO5aA/Xpf9nZSvEdI/AAAAAAAAAbc/7MVFXuQvMMkz9TaF3j-JFDU3zDatPbi1gCLcBGAsYHQ/s640/infiltracion.JPG" width="350" height="271" /></div> ' +
+ '<p>Fusión. Se refiere a la transformación del agua desde su estado sólido (hielo o nieve) a líquido, cuando se produce el deshielo. Así, el derretimiento de los hielos en las estaciones cálidas, como ocurre en los polos y en las regiones continentales heladas, devuelve el agua a su punto inicial del ciclo.</p> ' +
+  '<div align="center"><img src="https://definicion.de/wp-content/uploads/2013/09/puntodefusion.jpg" width="350" height="271" /></div> ' +
+  '<p>Solidificación. Consiste en el pasaje del agua desde el estado líquido a sólido y ocurre cuando la temperatura es menor a 0 ºC. El proceso de solidificación puede darse en las nubes, dando lugar a la formación de nieve o granizo y también sobre las superficies de lagos y ríos, cuando las temperaturas son lo suficientemente bajas.</p> ' +
+  '<div align="center"><img src="https://lh4.googleusercontent.com/proxy/1Xayhba5BVE9bTIxZSuuU0Tde1Hq5bdzFMrrnzKj1J5Bfp01C9AyWMBpdFKir6QNJJVimAyadkA-UIpgdf4OtnDLxehxcPLSW1Um5P9Lz-mbQYzm=s0-d" width="350" height="271" /></div> ' ;
+}
+else if(templateId ==='Tipos de agua'){
+	instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">Tipos de agua</span></p> ' +
+'<div id="texto3"> ' +
+'	<p>Encontramos distintas clases o tipos según su consumo, la cantidad de minerales, su procedencia o propiedades. Te presentamos una lista de aguas.</p> ' +
+ ' <div align="center"><img src="https://cdn.shopify.com/s/files/1/1955/0997/articles/Screen_Shot_2019-04-03_at_10.13.11_AM_2000x.png?v=1554308453" width="350" height="271" /></div> ' +
+'<p>1 . Agua potable ' +
+'El agua potable es el agua apta para el consumo humano, que tras un tratamiento adecuado, puede ser consumida sin que exista peligro para la salud.</p> ' +
+'<p>2 . Agua dulce ' +
+'El agua dulce es aquella que se encuentra naturalmente en la superficie de la Tierra en capas de hielo, humedales, lagunas, lagos, ríos y arroyos, y bajo la superficie como agua subterránea en acuíferos y corrientes bajo tierra. Se caracteriza generalmente por tener una baja concentración de sales y sólidos disueltos.</p> ' +
+'<p>3 . Agua salada ' +
+'También se denomina agua de mar, siendo la que se encuentra en los océanos y los mares de la Tierra.</p> ' +
+'<p>Dato:Se caracteriza por tener una concentración de sales minerales disueltas en torno al 35%</p> ' +
+'<p>4 . Agua salobre ' +
+'El agua salobre es agua con una salinidad entre el agua dulce y el agua de mar.  La salinidad del agua salobre no es condición definida con precisión y se considera que puede abarcar una gran variedad de regímenes de salinidad.</p> ' +
+'<p>5 . Agua dura ' +
+'El agua dura es aquella que contiene un alto nivel de minerales disueltos, en particular, sales de magnesio y calcio.</p> ' +
+'<p>6 . Agua blanda ' +
+'El agua blanda es el agua en la que se encuentran disueltas mínimas cantidades de sales. Se consideran aquellas que tienen menos de 50 mg/l de carbonato cálcico.</p> ' +
+'<p>7 . Agua destilada ' +
+'El agua destilada es aquella sustancia cuya composición se basa en la unidad de moléculas de H2O y ha sido purificada o limpiada mediante destilación.</p> ' +
+'<p>8 . Aguas residuales ' +
+'Las aguas residuales son cualquier tipo de agua cuya calidad está afectada negativamente por la influencia antropogénica.</p> ' +
+'<p>9 . Aguas negras ' +
+'Dentro de las aguas usadas, las aguas negras son aquellas que están contaminadas con heces u orina.</p> ' +
+'<p>10 . Aguas grises ' +
+'Las aguas grises son las aguas resultantes del uso doméstico. </p> ' +
+'<p>11 . Agua bruta ' +
+'El agua bruta o agua cruda es el agua que no ha recibido ningún tratamiento. </p> ' +
+ ' <div align="center"><img src="http://lablouispasteur.pe/wp-content/uploads/2017/11/agua-salada.jpg" width="350" height="271" /></div> ' +
+ '</div>  ' +
+'<div>  ' +
+'<p id="creditos" align="right" >Mg.  Juana Paredes Díaz</p>  ' +
+'</div>  ' ;
+}
+else if(templateId ==='Importancia del agua'){
+	instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">Importancia del agua</span></p> ' +
+'<div id="texto3"> ' +
+'	<div align="center"><img src="https://www.santalucia.es/blog/wp-content/uploads/2018/03/importancia-del-agua-1024x683.jpg" width="350" height="221" /></div> ' +
+'<p>Como importancia del agua tienes que saber que no toda el agua es apata para el consumo humano, ya que la disponibilidad de agua promedio anual en el mundo es de aproximadamente 1,386 millones de km3, de estos el 97.5% es agua salada, el 2.5%, es decir 35 millones de km3, es agua dulce y de ésta casi el 70% no está disponible para consumo humano debido a que se encuentra en forma de glaciares, nieve o hielo. Es importante que recuerdes este dato para que tomes en cuenta lo importante que es el agua y que no toda esta disponible para nuestros consumo.</p> ' +
+'<div align="center"><img src="https://pbs.twimg.com/media/Dk4_yYfVsAILBZS.jpg" width="350" height="221" /></div> ' +
+ ' <p>El agua es el elemento más importante para la vida. Es de una importancia vital para el ser humano, así como para el resto de animales y seres vivos que nos acompañan en el planeta Tierra. ' +
+'Resulta curioso que el 70 por ciento de la Tierra sea agua y que el 70 por ciento de nuestro cuerpo también sea agua. Quizás sea por eso que lo recomendable para tener una dieta saludable y una larga vida sea el comer alimentos con un porcentaje del 70 por ciento en agua.</p> ' +
+'<p>Utilizamos el agua para beber, para lavar los platos, para tomar una ducha, para tirar de la cisterna en el servicio, para cocinar y para muchos otros propósitos. Pero el agua se utiliza no solamente para los propósitos domésticos, los seres humanos también utilizan el agua en las industrias y en la agricultura</p> ' +
+'<p>Pero en cambio, el ser humano tiende a abusar de este rico elemento en perjuicio de su propia especie y en perjuicio de su propia existencia, así como la del resto de habitantes de la Tierra. Se dice que el ser humano puede llegar a necesitar hasta 500 litros de agua potable al día, lo que supone un derroche extremadamente excesivo. De ahí que le estemos dando tanta importancia al agua para el desarrollo de la vida en el planeta.</p> ' +
+'<p>Algunas de las funciones que cumple el agua en nuestro organismo son: Regula y mantiene la temperatura corporal. Posibilita el transporte de los nutrientes a las células. Elimina los desechos a través de la orina, la transpiración y las evacuaciones intestinales.</p> ' +
+'<p>Es necesario recrdar que el agua dulce es el líquido vital que hace posible la vida en la tierra. Es lo que todos los seres humanos necesitamos para crecer y vivir. ... Los seres humanos le damos múltiples usos al agua dulce. No solamente la bebemos, sino que también la usamos para bañarnos, para regar, para lavar cosas, para limpiar lugares, etc.</p> ' +
+'<div align="center"><img src="https://www.bioenciclopedia.com/wp-content/uploads/2020/01/importancia_del_agua.jpg" width="250" height="208" /></div>  ' +
+'<p>La importancia del agua en todos los seres vivos es crucial. Es un elemento de la naturaleza que integra los ecosistemas naturales y es fundamental para el sostenimiento y la supervivencia de la vida en todo el planeta. Las funciones del agua en los seres vivos garantizan que puedan llevarse a cabo los procesos biológicos necesarios para la reproducción de la vida.</p> ' +
+'<p>El ciclo hidrológico es de gran importancia para los ecosistemas naturales y la regulación del clima. El agua está en continuo movimiento a través del cambio que efectúa en sus tres diferentes estados -líquido, sólido y vapor- y se encuentra tanto en la superficie terrestre como debajo de ella. La alteración del ciclo del agua, como está sucediendo con el cambio climático, supone también modificar la vida de los ecosistemas del planeta.</p> ' +
+'<p>El agua es imprescindible para sostener la biodiversidad, ya que su escasez es sinónimo de pérdida de especies y ecosistemas. Y es también un elemento clave frente al cambio climático: el calentamiento global provoca aumentos de sequías, lluvias torrenciales e inundaciones que producen migraciones, cambios en los ecosistemas y la desaparición de fauna y flora. El incremento de las temperaturas conduce al deshielo de los glaciares y, con ello, aumenta el nivel del mar. Por otro lado, calienta los océanos y acidifica sus aguas, evitando que cumplan su función de sumideros de CO2 y afectando a las especies marinas.</p> ' +
+'<div align="center"><img src="https://www.bioenciclopedia.com/wp-content/uploads/2020/01/agua_recurso_natural.jpg." width="250" height="208" /></div>  ' +
+'</div>  ' ;
+}
+else if(templateId ==='Segunda vuelta al agua'){
+	instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">Segunda vuelta al agua</span></p> ' +
+'<div id="texto3"> ' +
+'	<div align="center"><img src="https://agua.org.mx/wp-content/uploads/2019/04/Cubetas-de-Agua.jpeg" width="350" height="221" /></div> ' +
+'<p>En el dia a dia, como ya mencionamos dentro de la importancia, necesitamos agua y en diversas ocasiones despues de usarla se va por las coladeras sin que nosotros le demos una seguna vuelta, una segunda vida, una segunda oportunidad. Si nosotros a diario le dieramos una segunda vuelta el agua se malgastaria menos y asi estariamos ahorrando, siendo parte de los defensores del agua, haciendola durar mas año para genraciones futuras.</p> ' +
+'<p>Por eso es necesario conocer formas para reusar el agua y asi esta sea aprovechada al maximo. Por ejemplo:</p> ' +
+'<ol>Aprovechar el agua fria que sale de la regadera mientras esperamos que salga el agua caliente</ol> ' +
+'<ol>Ocupar el agua que usamos para lavar la ropa para lavar patios</ol>   ' +
+'<ol> Regar plantas de noche</ol> ' +
+'<ol>Lavar el carro con cubetas, no con la manguera</ol> ' +
+'<ol>Recoger el agua de la lluvia</ol> ' +
+'<ol>Cerrar la llave del fregadero mientras tallamos los platos</ol> ' +
+'<ol>Bañarse en menor tiempo posible, y si podemos rescatar esta agua usemos esta para lavar las banquetas, patios o regar las plantas</ol> ' +
+'<ol>Colocar platos debajo de las macetas y asi estas aprovechen al maximo el agua</ol> ' +
+'<ol>Usar el agua de la secadora para planchar la ropa</ol> ' +
+'<ol>Reciclar el agua que se obtiene de los aparatos de aire acondicionado, pero recuerda, tampoco es apta para el consumo humano.</ol> ' +
+'<ol>Reciclar el agua de las ollas para regar las plantas</ol> ' +
+'<p>RECUERDA QUE TENEMOS QUE CUIDAR EL AGUA, DARLE EL MAYOR USO POSIBLE Y APROVECHARLA AL MAXIMO</p> ' +
+'<link rel="https://youtu.be/jToXURXiSUg"/> ' +
+'<div align="center"><img src="https://ep00.epimg.net/elpais/imagenes/2016/05/30/planeta_futuro/1464609157_494896_1464609919_noticia_normal.jpg" width="350" height="271" /></div> ' +
+'</div>  ' ;
+}
+else if(templateId ==='Ya no tenemos agua'){
+	instance.querySelector('.title').innerHTML = '<p id="titulo2" align="center"><span class="titulo">YA NO TENEMOS AGUA</span></p> ' +
+'<div align="center"><img src="https://thumbs.dreamstime.com/b/tierra-seca-del-planeta-47704060.jpg" width="350" height="221" /></div> ' +
+'<P>Todo el tiempo, en todas partes vemos informacion de lo importante que es reciclar el agua y que ya no hay agua pero ¿conocer realmente cuanta agua nos queda en el planeta para nuestro consumo?</P> ' +
+'<p>Nuestro planeta azul contiene unos 1386 millones de km3 de agua, una cantidad que no ha disminuido ni aumentado en los últimos dos mil millones de años. Se calcula que el 97% es agua salada y sólo el sólo el 2.5% del agua que existe en la Tierra se considera dulce. Si tenemos en cuenta que el 90% de los recursos disponibles de agua dulce del planeta están en la Antártida esta sensación de abundancia merma. Sólo el 0.5% de agua dulce se encuentra en depósitos subterráneos y el 0.01% en ríos y lagos.</p> ' +
+'<p>Entonces, ¿cuál es la cantidad de agua potable existente en la Tierra? El agua dulce se distribuye en un 70% en agua congelada en glaciares y un 30% en la humedad del suelo o acuíferos. Respecto al resto, un 1% se encuentra en cuencas hidrográficas y… tan solo un 0,025% es potable. Datos oficiales afirman, por tanto, que sólo el 0.007% del agua existente en la Tierra es potable, y esa cantidad se reduce año tras año debido a la contaminación.</p> ' +
+'<div align="center"><img src="https://www.24horas.cl/incoming/article410963.ece/ALTERNATES/BASE_LANDSCAPE/Agua%20en%20el%20Mundo" width="350" height="221" /></div> ' +
+'<p>Esto nos hace conscientes que el agua es un recurso escaso y limitado además de un derecho en un mundo desigual. La falta de acceso a ella es motivo de pobreza, desigual, injusticia social y crea grandes diferencias en las oportunidades que ofrece la vida.</p> ' +
+'<div align="center"><img src="https://pbs.twimg.com/media/Dk4_yYfVsAILBZS.jpg" width="350" height="221" /></div>  ' ;
+}
+	// Append the instance ot the DOM
+    booksList.appendChild(instance);
+}
+
+
+document.getElementById('templates').addEventListener('click', (event) => appendBooks(event.target.value));
+
+appendBooks('Vamos a reflexionar');
+</script>
+
+</body>
+</html>
